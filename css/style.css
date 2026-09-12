@@ -258,6 +258,16 @@ body::before {
 .two-pics svg { width: auto !important; height: 110px; }
 .pattern { font-size: 30px; }
 
+/* 글 상자 (이야기·설명글·시) */
+.passage { text-align: left; background: #fff; border: 3px solid var(--panel-edge); padding: 10px 12px; margin: 6px 0; font-size: 18px; line-height: 1.6; }
+.passage .ptitle { font-weight: 800; text-align: center; margin-bottom: 6px; color: var(--dirt-dark); }
+.passage p { margin: 2px 0; }
+.passage .q { color: var(--gold-dark); }
+.bigword { font-size: 34px; font-weight: 800; margin: 6px 0; padding-bottom: 16px; }
+.bigword .q { color: var(--gold-dark); position: relative; }
+.bigword .jong { position: absolute; left: 50%; bottom: -14px; transform: translateX(-50%); font-size: 16px; background: #fff3cd; border: 2px dashed var(--gold-dark); padding: 0 6px; line-height: 1.2; }
+.option.emoji-only { font-size: 44px; text-shadow: none; }
+
 /* 선택지 */
 .options { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .options.single { grid-template-columns: 1fr; }

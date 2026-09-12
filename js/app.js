@@ -111,6 +111,9 @@
       h('h1', {}, title),
       h('div', { class: 'spacer' }));
   }
+  function isEmojiOnly(s) {
+    return typeof s === 'string' && s.length <= 4 && /^\p{Extended_Pictographic}/u.test(s);
+  }
   function sameSet(a, b) {
     if (a.length !== b.length) return false;
     const s = new Set(a.map(String));
@@ -257,7 +260,7 @@
       const options = type === 'ox' ? ['O', 'X'] : (q.keepOrder ? q.options.slice() : shuffle(q.options));
       const optionEls = options.map(opt => {
         const el = h('button', {
-          class: `option${type === 'ox' ? ' ox ' + opt : ''}`,
+          class: `option${type === 'ox' ? ' ox ' + opt : ''}${isEmojiOnly(opt) ? ' emoji-only' : ''}`,
           onclick: () => {
             if (answered) return;
             const ok = String(opt) === String(q.answer);
